@@ -2,12 +2,11 @@
 
 client_id = "f727f77745028b3cc3dd07358e80cf4e"
 name = "MergeCart"
-application_url = "https://muslim-millions-colours-feeding.trycloudflare.com
+application_url = "https://conjunction-memphis-analyses-teachers.trycloudflare.com"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-include_config_on_deploy = true
 
 [webhooks]
 api_version = "2026-01"
@@ -22,7 +21,17 @@ api_version = "2026-01"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_app_proxy,write_products,write_cart_transforms"
 
 [auth]
-redirect_urls = [ "https://muslim-millions-colours-feeding.trycloudflare.com/api/auth" ]
+redirect_urls = [ "https://conjunction-memphis-analyses-teachers.trycloudflare.com/api/auth" ]
+
+[app_proxy]
+url = "/api"
+prefix = "apps"
+subpath = "api"
+
+[[extensions]]
+name = "bundle-cart-transform"
+handle = "bundle-cart-transform"
+type = "function"
